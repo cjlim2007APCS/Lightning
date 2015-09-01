@@ -19,6 +19,7 @@ int startX = 0;
 int startY = 150;
 int endX = 0;
 int endY = 150;
+int setY;
 int fillColor;
 int[] arrayR = {108, 235, 232, 116, 247, 89};
 int[] arrayG = {252, 255, 181, 237, 190, 117};
@@ -27,14 +28,11 @@ public void setup()
 {
   size(300,300);
   background(0,0,0);
-  strokeWeight(3);
-  frameRate(10);
+  strokeWeight(5);
   noLoop();
 }
 public void draw()
 {
-	
-	
 	while(endX < 300) {
 	fillColor = (int)(Math.random()*6);
 	stroke(arrayR[fillColor], arrayG[fillColor], arrayB[fillColor]);
@@ -44,10 +42,11 @@ public void draw()
 	startX = endX;
 	startY = endY;
 	}
+	setY = (int)(Math.random() * 300);
 	startX = 0;
-	startY = 150;
+	startY = setY;
 	endX = 0;
-	endY = 150;
+	endY = setY;
 }
 public void mousePressed()
 {
